@@ -57,6 +57,7 @@ Ideal range: 70cm - 8m
 MinZ: ~20cm (400P, extended), ~35cm (400P OR 800P, extended), ~70cm (800P)
 
 MaxZ: ~15 meters with a variance of 10% (depth accuracy evaluation)
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/589c0d8c-1fb7-4ff0-9a83-fa555b7059b6)
 
 
 ## Depth Camera Application with Autonomous Vehicles
@@ -101,6 +102,10 @@ Topics are named buses over which nodes exchange messages. A node sends out a me
 -   **Subscribers** are nodes that receive messages from a topic.
 
 ![Images/ROS Overview](Images/ROS-Node-and-Topics-scheme.png)
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/739bb7d6-ac8c-47aa-8e06-3ec2b4452f34)
+
+
 
 ## Depth AI Python Jetson Nano Setup 
 ##### This phase serves as a preliminary step, focusing on the configuration of your Jetson system to interface with the OAK-D cameras effectively. It also involves the installation of the DepthAI Python Library,  which is not related to ROS but is to verify the successful launch and functioning of the OAK-D camera system post-setup.

@@ -193,20 +193,48 @@ first download the updated Depth_AI dependencies from Luxonis:
 #Download and install the dependency package
 sudo wget -qO- https://docs.luxonis.com/install_dependencies.sh | bash
 ```
-a dependency package in a shell script refers to an external software package or library that the script requires to function correctly. Ensuring that the necessary dependencies are installed on the system is crucial for the successful execution of the script.
+The command wget | bash is a combination of two commands chained together using the pipe (|) operator in a Unix-like shell environment.A dependency package in a shell script refers to an external software package or library that the script requires to function correctly. Ensuring that the necessary dependencies are installed on the system is crucial for the successful execution of the script.
 
 then download the depthai-python from github repository:
 ```bash
 #Clone github repository
 git clone https://github.com/luxonis/depthai-python.git
 ```
-Last step is to edit :code:`.bashrc` with the line:
-
+In the context of OpenBLAS, which is an open-source implementation of the Basic Linear Algebra Subprograms (BLAS) library optimized for various CPU architectures, including ARM-based processors, setting the OPENBLAS_CORETYPE environment variable allows you to specify the target CPU architecture for optimization. By setting OPENBLAS_CORETYPE to ARMV8, you are instructing OpenBLAS to optimize its performance specifically for ARMv8-based CPUs (Jetson Nano is powered by an ARM Cortex-A57 CPU, which is an ARMv8-A architecture). 
+Last step is to edit`.bashrc` with the line:
 ```bash
 echo "export OPENBLAS_CORETYPE=ARMV8" >> ~/.bashrc
 ```
+### 5. Depth_AI Examples 
+Luxonis DepthAI offers a range of examples that demonstrate the capabilities of their hardware platform and software libraries. These examples cover various use cases and functionalities, allowing developers to quickly get started with DepthAI and explore its features. Here are some common examples provided by DepthAI Luxonis:
 
-Navigate to the folder with `depthai` examples folder, run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
+- Depth Sensing: Examples demonstrating depth sensing capabilities, including depth estimation, point cloud generation, and depth-based segmentation.
+
+- Object Detection: Examples showcasing object detection using pre-trained models and DepthAI hardware for real-time detection of objects in the environment.
+
+- Semantic Segmentation: Examples illustrating semantic segmentation, where objects in the scene are classified into different categories based on depth and visual data.
+
+- Neural Inference: Examples demonstrating real-time neural network inference on DepthAI hardware, including custom model deployment and optimization.
+
+- Spatial AI: Examples focusing on spatial AI tasks such as simultaneous localization and mapping (SLAM), 3D reconstruction, and scene understanding using DepthAI sensors and AI accelerators.
+
+- Augmented Reality: Examples showing how DepthAI can be used for augmented reality applications, including virtual object placement, gesture recognition, and immersive experiences.
+
+- Robotics: Examples demonstrating DepthAI's integration with robotics platforms for tasks such as navigation, obstacle avoidance, object tracking, and manipulation.
+
+- Edge AI: Examples highlighting the use of DepthAI for edge AI applications, including edge computing, on-device processing, and low-latency inference.
+
+- Custom Applications: DepthAI provides tools and resources for developing custom applications and solutions tailored to specific use cases and industries. Developers can leverage the examples and documentation to build innovative applications using DepthAI hardware and software.
+
+more info are here https://docs.luxonis.com/projects/api/en/latest/tutorials/code_samples/. Navigate to the folder with `depthai` examples folder:
+```bash
+cd depthai-python/examples
+```
+there are various examples and available python codes:
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/e509b7c9-c537-4458-8011-9429c7d2219f)
+
+
+run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)
 ![Images/ROS Overview](Images/depthai_pythonlib_2.png)

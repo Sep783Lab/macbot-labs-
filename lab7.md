@@ -282,6 +282,10 @@ also try the `spatial_location_calculator.py ` to move around the box with keybo
 ```bash
 python3 spatial_location_calculator.py
 ```
+
+![spatial_location_calculator](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/5d0119ba-318f-40f3-bee2-ac955216d24a)
+
+
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)

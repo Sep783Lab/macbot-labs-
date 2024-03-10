@@ -233,6 +233,26 @@ cd depthai-python/examples
 there are various examples and available python codes:
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/e509b7c9-c537-4458-8011-9429c7d2219f)
 
+#### 1. install_requirements.py 
+The install_requirements.py script for DepthAI serves the purpose of installing the necessary dependencies and packages required to set up the DepthAI environment. This script automates the process of installing dependencies, making it easier for users to prepare their development environment for working with DepthAI hardware and software.
+
+```bash
+python3 install_requirements.py
+```
+here is the resualt:
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/b5840188-843e-4059-b8f4-d4117fb02f83)
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/60fd54eb-4a6b-499d-a8ea-74588cf31526)
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/7129b30a-bbed-4ce1-9185-49aa73d3bd72)
+
+#### 2. camera_isp.py  
+The camera_isp.py script for the OAK-D camera, developed by Luxonis, likely provides functionalities specific to the Image Signal Processor (ISP) capabilities of the camera module. Here's a general overview of what the functionality of camera_isp.py for the OAK-D camera 
+```bash
+cd Camera
+python3 camera_isp.py
+```
+You can see the 'left' and 'right' camera images (see the offset)
+
+
 
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python

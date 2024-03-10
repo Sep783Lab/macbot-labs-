@@ -361,8 +361,9 @@ once you are inside the docker container run the following
 ```bash
 roslaunch depthai_examples  stereo_node.launch
 ```
-![Images/ROS Overview](Images/ros_example.png)
+rotate the pointclouds in rviz:
 
+![Selection_010](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/4e0e85cb-9e56-4ebc-9cb2-8a29cff99414)
 
 you can look inside the other depthai_* ROS Packages and attempt to run them (located `/ws/src/depthai-ros/depthai_examples`). Please note some of them won't work. i.e. rtabmap launch files won't work as the package is not installed as part of the container. You can apt-get install it and other repos however, once containers are closed all the work inside of them are lost (unless you save current container into a new image).
 

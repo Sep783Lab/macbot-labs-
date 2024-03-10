@@ -245,14 +245,22 @@ here is the resualt:
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/7129b30a-bbed-4ce1-9185-49aa73d3bd72)
 
 #### 2. camera_isp.py  
-The camera_isp.py script for the OAK-D camera, developed by Luxonis, likely provides functionalities specific to the Image Signal Processor (ISP) capabilities of the camera module. Here's a general overview of what the functionality of camera_isp.py for the OAK-D camera 
+The camera_isp.py script (located ~/depthai-python/examples/Camera) for the OAK-D camera, developed by Luxonis, likely provides functionalities specific to the Image Signal Processor (ISP) capabilities of the camera module. Here's a general overview of what the functionality of camera_isp.py for the OAK-D camera 
 ```bash
-cd Camera
+cd ~/depthai-python/examples/Camera
 python3 camera_isp.py
 ```
 You can see the 'left' and 'right' camera images (see the offset)
 
+![camera_isp](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/aa4667e0-a1eb-42e7-85c1-1e64f8cf123f)
 
+#### 3. depth_colormap.py 
+The depth_colormap.py script from the DepthAI library is designed to provide users with tools and functionalities for visualizing, analyzing, and processing depth data captured by depth-sensing cameras, with a focus on generating colored depth maps for various applications in computer vision, robotics, and depth sensing:
+
+ ```bash
+cd ~/depthai-python/examples/StereoDepth
+python3 depth_colormap.py 
+```
 
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python

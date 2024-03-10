@@ -1,4 +1,4 @@
-﻿
+
 # 💾 Lab 7: Depth Camera Integration and Point Cloud Visualization
 
 ## GitHub Repository

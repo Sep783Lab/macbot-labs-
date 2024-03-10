@@ -147,36 +147,67 @@ open your `bashrc` file located in your home directory with vi (you can open/edi
 ```bash
 sudo vi ~/.bashrc
 ```
-Add following lines to the bash script:
+add following lines to the bash script:
 ```bash
 # Virtual Env Wrapper Configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 ```
-Save and reload the script by running the command `source ~/.bashrc`. Then create a virtual environment (in this example it's called `depthAI`).
-  
+Save and reload the script by running the command `source ~/.bashrc`.
+```bash
+source ~/.bashrc
+```
+then create a virtual environment (in this example it's called `depthAI`).
 ```bash
 mkvirtualenv depthAI_ve -p python3
 ```
-**Note!** Before installing `depthai`, make sure you're in the virtual environment.
-
+to check that you are in virtual envir0ment:
 ```bash
+echo $VIRTUAL_ENV
+```
+it should return the following:
 
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/00c1fa89-4e82-4c2c-89d7-ff93ca2c8080)
+
+### 4. Installing Depth_AI
+The DepthAI library from Luxonis is a software library designed to work with Luxonis DepthAI hardware modules. DepthAI is an embedded platform that integrates multiple capabilities for depth perception, object detection, and spatial AI tasks into a compact and low-power device. The platform is specifically designed for applications that require real-time processing of depth and visual data, such as robotics, augmented reality, autonomous vehicles, and more.
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/547140c2-bcb6-48a4-a923-9b9f5ad18c2e)
+
+
+The DepthAI library provides a set of APIs and tools that enable developers to interact with DepthAI hardware and leverage its capabilities. Some of the key features and functionalities of the DepthAI library may include:
+
+- Depth Sensing: The DepthAI hardware modules include stereo cameras and depth sensors, which allow for accurate depth perception and spatial mapping of the environment.
+
+- Object Detection: The library may include pre-trained models and algorithms for detecting objects in the environment based on visual and depth data.
+
+- Neural Inference: DepthAI hardware may be equipped with AI accelerators to perform real-time neural network inference for tasks such as object recognition, classification, and tracking.
+
+- Spatial AI: The platform may support advanced spatial AI tasks, such as simultaneous localization and mapping (SLAM), gesture recognition, and scene understanding.
+
+- Integration with Python: The DepthAI library may provide Python bindings and APIs, making it easy for developers to interact with DepthAI hardware and integrate it into their Python-based projects.
+
+first download the updated Depth_AI dependencies from Luxonis:
+```bash
 #Download and install the dependency package
 sudo wget -qO- https://docs.luxonis.com/install_dependencies.sh | bash
+```
+a dependency package in a shell script refers to an external software package or library that the script requires to function correctly. Ensuring that the necessary dependencies are installed on the system is crucial for the successful execution of the script.
 
+then download the depthai-python from github repository:
+```bash
 #Clone github repository
 git clone https://github.com/luxonis/depthai-python.git
-cd depthai-python
 ```
 Last step is to edit :code:`.bashrc` with the line:
 
 ```bash
 echo "export OPENBLAS_CORETYPE=ARMV8" >> ~/.bashrc
 ```
-Navigate to the folder with `depthai` examples folder, run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 
+Navigate to the folder with `depthai` examples folder, run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
+cd depthai-python
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)
 ![Images/ROS Overview](Images/depthai_pythonlib_2.png)
 

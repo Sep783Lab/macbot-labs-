@@ -275,6 +275,9 @@ The spatial_calculator_multi_roi.py script likely serves as a tool within the De
 cd ~/depthai-python/examples/SpatialDetection
 python3 spatial_calculator_multi_roi.py 
 ```
+You can move around the objects and observe the distances:
+![spatial_calculator_multi_roi](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/c32d4b52-d99e-4729-a776-b46f6b683380)
+
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)

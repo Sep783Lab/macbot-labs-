@@ -6,7 +6,7 @@
 {% embed url="https://github.com/septmacbot/macbot-deploy" %}
 
 ## Objectives
-
+Learn how to set up and use a depth camera with ROS to unlock the power of 3D perception in robotics and computer vision applications. With ROS (Robot Operating System) integration, you can seamlessly connect depth cameras to your robotic systems and leverage ROS functionalities to process and analyze depth data. Utilize ROS packages to generate a point cloud from depth images, enabling you to capture and interpret the spatial information of the environment in real-time. Visualize camera data in RViz, ROS's powerful visualization tool, to gain insights into the depth information captured by the camera and understand the scene's structure and geometry. By combining depth cameras with ROS, you can enhance your robotics projects with advanced perception capabilities and enable applications such as object detection, navigation, and manipulation in complex environments. Here are the steps that we follow in this Lab session:
 
 -   Learn how to set up and use a depth camera with ROS.
     
@@ -21,72 +21,46 @@ In stereo vision, depth perception is achieved by capturing different views of a
 
 Depth Cameras uses two seperate cameras side by side, like human eyes. Each camera takes a picture. The system looks at a point on the object in both pictures and measures how far apart that point appears in the two images. Knowing this difference and how far apart the cameras are, the system can calculate how far away the object is.
 
+**Baseline (B)**: The distance between the two cameras.
 
-Baseline (B): The distance between the two cameras.
+**Disparity (d)**: The difference in the position of the object in the two pictures.
 
-Disparity (d): The difference in the position of the object in the two pictures.
-
-Focal Length (f): The distance inside each camera from the lens to the sensor, where the image is formed.
+**Focal Length (f)**: The distance inside each camera from the lens to the sensor, where the image is formed.
 Simple Geometry:
 
-Triangle Similarity: You can imagine two similar right triangles. One is formed by the focal length (f) and the object's position in one picture, and the other is formed by the baseline (B) and the actual distance to the object (Z).
-
-Ratio: The ratio of these triangles' sides gives you the equation:
+Triangle Similarity: You can imagine two similar right triangles. One is formed by the focal length (f) and the object's position in one picture, and the other is formed by the baseline (B) and the actual distance to the object (Z). Ratio: The ratio of these triangles' sides gives you the equation:
 
     f / d = Z / B
-
 ​
- 
 Calculate Z (Distance to Object): With this equation, you can find the distance to the object (Z) by rearranging it:
 
     Z = (f * B) / d
 
-
-
-
-
-
 ![Images/depth_c](Images/Stereo3DVision_1.png)
-
-### From luxonis documenntation website:
-Stereo depth perception
-This OAK camera has a baseline of 7.5cm - the distance between the left and the right stereo camera. Minimal and maximal depth perception (MinZ and Max) depends on camera FOV, resolution, and baseline- more information here.
-
-Ideal range: 70cm - 8m
-
-MinZ: ~20cm (400P, extended), ~35cm (400P OR 800P, extended), ~70cm (800P)
-
-MaxZ: ~15 meters with a variance of 10% (depth accuracy evaluation)
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/589c0d8c-1fb7-4ff0-9a83-fa555b7059b6)
-
 
 ## Depth Camera Application with Autonomous Vehicles
 
-Navigation: Depth cameras help robots to navigate by creating a 3D map of their environment.
-Object Manipulation: Depth data can aid in the precise grasping and manipulation of objects.
-
-Surgical Assistance: In medical robotics, depth cameras can provide real-time 3D imaging to assist in complex surgeries.
-Gait Analysis: Used in biomechanics to study human movement and posture.
-
-Advanced Driver-Assistance Systems (ADAS): Depth cameras can be used to detect objects, pedestrians, and even road signs.
-Autonomous Vehicles: Crucial for real-time navigation and obstacle detection.
-
-
+Depth cameras facilitate navigation for robots by generating a comprehensive 3D map of their surroundings. Additionally, they enhance object manipulation capabilities by providing precise depth data for accurate grasping and manipulation tasks. In medical robotics, depth cameras offer real-time 3D imaging to aid in complex surgical procedures. Moreover, these cameras are utilized in biomechanics for gait analysis, enabling the study of human movement and posture. In automotive applications, depth cameras play a pivotal role in Advanced Driver-Assistance Systems (ADAS) by detecting objects, pedestrians, and road signs. Furthermore, they are indispensable for autonomous vehicles, enabling real-time navigation and obstacle detection..
 
 ### Depth Maps and Collision Warning systems
 
-A depth map is an image or image channel that contains information relating to the distance of the surfaces of scene objects from a viewpoint. Estimating depth is an important component of understanding geometric relations within a scene.
-
-The first step to calculating the collision warning was to select a region of interest (ROI) from the disparity output. The yellow region which signifies least distance from the vehicle was taken as the ROI
-
-You can also use YOLO object detection model to detect objects, pedestrians, and even road signs.
-
-This can be crucial for real-time navigation and obstacle detection.
-
+A depth map, often represented as an image or image channel, provides valuable data about the distance between the surfaces of objects in a scene and a specific viewpoint. Estimating depth is essential for comprehending the geometric relationships within a scene, aiding in tasks such as collision avoidance and spatial awareness. In the context of calculating collision warnings, the initial step involved selecting a region of interest (ROI) from the disparity output. This ROI, highlighted in yellow to indicate the closest distance from the vehicle, was chosen as the focus area for collision assessment. Additionally, leveraging the YOLO object detection model enables the detection of various objects, pedestrians, and road signs. Such capabilities are integral for real-time navigation and obstacle detection, enhancing safety and efficiency in dynamic environments.
 
 ![Images/col](Images/col_warn.png)
 
+### From luxonis documenntation website: (https://shop.luxonis.com/)
+Stereo depth perception
+The OAK-D Lite camera, developed by Luxonis, is a compact yet powerful depth sensing and AI camera designed for edge computing applications. Building upon Luxonis' expertise in depth perception and spatial AI, the OAK-D Lite camera offers advanced features such as stereo depth sensing, depth AI acceleration, and onboard processing capabilities in a small form factor. With its depth perception capabilities, the OAK-D Lite camera enables applications such as object detection, tracking, and 3D mapping, making it an ideal solution for robotics, augmented reality, and autonomous systems. This camera empowers developers to create innovative applications that require real-time depth sensing and AI inference at the edge, opening up new possibilities for intelligent and interactive systems. This OAK camera has a baseline of 7.5cm - the distance between the left and the right stereo camera. Minimal and maximal depth perception (MinZ and Max) depends on camera FOV, resolution, and baseline- more information here: https://docs.luxonis.com/projects/hardware/en/latest/pages/DM9095/
+
+- Ideal range: 70cm - 8m
+- MinZ: ~20cm (400P, extended), ~35cm (400P OR 800P, extended), ~70cm (800P)
+- MaxZ: ~15 meters with a variance of 10% (depth accuracy evaluation)
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/589c0d8c-1fb7-4ff0-9a83-fa555b7059b6)
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/739bb7d6-ac8c-47aa-8e06-3ec2b4452f34)
+
 ## Quick review of ROS 
+The integration of stereo cameras with ROS (Robot Operating System) holds significant importance in robotics and computer vision applications, as it enhances perception and spatial understanding for robotic systems. By incorporating stereo vision capabilities into ROS-enabled robots, developers gain access to depth information, allowing for more accurate and robust navigation, mapping, and object recognition tasks. Stereo cameras provide the ability to capture 3D information about the environment, enabling robots to accurately perceive depth and distance to objects. This information is crucial for tasks such as obstacle avoidance, path planning, and localization in dynamic and unstructured environments. Additionally, the integration of stereo cameras with ROS facilitates seamless communication and interoperability with other ROS-enabled components and libraries, empowering developers to build complex robotic systems with enhanced perception capabilities. Overall, the integration of stereo cameras with ROS enhances the autonomy, versatility, and reliability of robotic systems, enabling them to perform more effectively in a wide range of applications and scenarios. A brief review of the ROS
 
 ### Nodes
 
@@ -103,20 +77,24 @@ Topics are named buses over which nodes exchange messages. A node sends out a me
 
 ![Images/ROS Overview](Images/ROS-Node-and-Topics-scheme.png)
 
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/739bb7d6-ac8c-47aa-8e06-3ec2b4452f34)
 
 
 
 ## Depth AI Python Jetson Nano Setup 
-##### This phase serves as a preliminary step, focusing on the configuration of your Jetson system to interface with the OAK-D cameras effectively. It also involves the installation of the DepthAI Python Library,  which is not related to ROS but is to verify the successful launch and functioning of the OAK-D camera system post-setup.
+In this context, the phase described serves as an initial setup step aimed at configuring the Jetson system to work seamlessly with the OAK-D cameras. This involves ensuring that the necessary drivers and dependencies are installed to enable communication between the Jetson and the OAK-D cameras. Additionally, the installation of the DepthAI Python Library is performed during this phase. While this library is not directly related to ROS (Robot Operating System), it is essential for verifying the successful launch and operation of the OAK-D camera system after setup completion. Essentially, this phase ensures that the hardware and software components required for utilizing the OAK-D cameras are properly configured and operational before proceeding with further development or integration tasks within the ROS environment.
+### 1. Define USB Rules:
+Defining USB rules in Ubuntu is necessary for several reasons:Device Recognition, Permissions Management, Automated Actions, and Device Identification. USB rules allow Ubuntu to recognize and assign consistent names or paths to USB devices when they are connected to the system. This is particularly useful for devices such as serial ports, USB drives, or custom USB peripherals. To add a USB rule in Ubuntu, you typically use the 'udev' system, which manages device files in the /dev directory. 
 
 Open a terminal window and run the following commands:
+
 ```bash
 #Add USB rules to your system
-
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
+`udevadm` is a command-line utility in Linux used for querying and controlling the udev device manager. udev is the device manager for the Linux kernel, responsible for managing device nodes and device events. It dynamically creates and removes device nodes in the /dev directory as devices are added or removed from the system (more info here:https://man.archlinux.org/man/udevadm.8.en)
+
+keeping your system up-to-date : `sudo apt update` fetches the latest package information from repositories, and `sudo apt upgrade` installs the latest available versions of the installed packages, ensuring that your system has the most up-to-date software. Combining these commands with `&&` ensures that the upgrade command is only executed if update completes successfully, preventing upgrades based on outdated package lists.
 
 ```bash
 sudo apt update && sudo apt upgrade

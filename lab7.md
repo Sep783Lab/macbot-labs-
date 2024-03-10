@@ -318,6 +318,8 @@ The are various functions in the library such as IMU, Tracker, UVC, ... .
 ## Getting started with ROS and Docker
 The OAK-D Cameras by Luxonis come equipped with official Luxonis Depth-AI ROS packages. These packages offer support exclusively for ROS 2 Distributions and ROS Noetic Distro from ROS 1. In our previous labs, we've been utilizing ROS Melodic, which is compatible with the onboard Jetson Nano Linux system running Ubuntu 18.04. Unfortunately, ROS Noetic isn't compatible with Ubuntu 18.04, making it unusable for our current setup. However, we can address this compatibility issue by leveraging Docker Images. Docker provides a solution by allowing us to encapsulate ROS Noetic environments within containers, enabling us to run ROS Noetic on systems with Ubuntu 18.04 seamlessly.
 
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/b62205a8-d055-43d1-b266-f99a9c6bc4cc)
+
 Docker (https://wiki.ros.org/docker/Tutorials/Docker) simplifies the process of building, shipping, and running applications by providing a consistent and portable environment across different systems and platforms. It has become a popular choice for DevOps teams and developers for building and deploying containerized applications in cloud, on-premises, and hybrid environments. Each tagged version has it's own prebuilt docker image. To download and run it:
 
 ```bash

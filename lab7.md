@@ -48,7 +48,7 @@ A depth map, often represented as an image or image channel, provides valuable d
 
 ![Images/col](Images/col_warn.png)
 
-### From luxonis documenntation website: (https://shop.luxonis.com/)
+### From luxonis documenntation website: (https://www.luxonis.com/)
 Stereo depth perception
 The OAK-D Lite camera, developed by Luxonis, is a compact yet powerful depth sensing and AI camera designed for edge computing applications. Building upon Luxonis' expertise in depth perception and spatial AI, the OAK-D Lite camera offers advanced features such as stereo depth sensing, depth AI acceleration, and onboard processing capabilities in a small form factor. With its depth perception capabilities, the OAK-D Lite camera enables applications such as object detection, tracking, and 3D mapping, making it an ideal solution for robotics, augmented reality, and autonomous systems. This camera empowers developers to create innovative applications that require real-time depth sensing and AI inference at the edge, opening up new possibilities for intelligent and interactive systems. This OAK camera has a baseline of 7.5cm - the distance between the left and the right stereo camera. Minimal and maximal depth perception (MinZ and Max) depends on camera FOV, resolution, and baseline- more information here: https://docs.luxonis.com/projects/hardware/en/latest/pages/DM9095/
 
@@ -100,21 +100,32 @@ keeping your system up-to-date : `sudo apt update` fetches the latest package in
 sudo apt update && sudo apt upgrade
 sudo reboot now
 ```
-Change the size of your SWAP. These instructions come from the `Getting Started with AI on Jetson <https://developer.nvidia.com/embedded/learn/jetson-ai-certification-programs>` from Nvidia:
+### 2. Resize SWAP
+Swap space, also known as virtual memory, is an area on a storage device (such as a hard drive, SSD, or even a partition) that the operating system uses as an extension of physical RAM. When the system's physical RAM is fully utilized, the operating system moves data from RAM to the swap space to free up RAM for active proces. Swap space on a Jetson Nano (or any Linux-based system) is a reserved area on the storage device (typically a disk or an SD card) that the operating system uses as virtual memory when physical RAM (Random Access Memory) is full or insufficien.
 
+Overall, resizing swap space on a Jetson Nano when using DepthAI can help ensure smooth operation of DepthAI applications and optimize system performance, particularly in scenarios where memory requirements are high or resource contention is a concern. Change the size of your SWAP. These instructions come from the `Getting Started with AI on Jetson <https://developer.nvidia.com/embedded/learn/jetson-ai-certification-programs>` from Nvidia:
+
+ disbale the NVIDIA ZRAM swap configuration:
 ```bash
 # Disable ZRAM:
 sudo systemctl disable nvzramconfig
+```
+allocate 4G for SWAP:
+```bash
 # Create 4GB swap file
 sudo fallocate -l 4G /mnt/4GB.swap
 sudo chmod 600 /mnt/4GB.swap
 sudo mkswap /mnt/4GB.swap
 ```
-install `pip` and `python3` 
+### 3. Install `pip` and `python3`
+Python 3, the most recent major release of the Python programming language, finds widespread use across diverse domains including web development, data analysis, artificial intelligence, automation, and beyond. PIP, short for Python Package Index, serves as Python's package manager, streamlining the installation, management, and removal of Python packages sourced from the Python Package Index. While Python 3 constitutes the programming language, PIP functions as a utility enabling the smooth management of Python packages and their dependencies, thereby facilitating seamless integration with external libraries and enhancing Python's capabilities.
 
+install the python3-pip package on a Debian-based Linux system, such as Ubuntu
 ```bash
 sudo -H apt install -y python3-pip
 ```
+The -H option sets the HOME environment variable to the home directory and -y option automatically answers "yes" to any prompts or questions.
+
 After that, install and set up virtual environment:
 ```bash
 sudo -H pip3 install virtualenv virtualenvwrapper

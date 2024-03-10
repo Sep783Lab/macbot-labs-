@@ -205,6 +205,13 @@ Last step is to edit`.bashrc` with the line:
 ```bash
 echo "export OPENBLAS_CORETYPE=ARMV8" >> ~/.bashrc
 ```
+
+The libcanberra-gtk-module provides a bridge between GTK-based applications and the libcanberra library, allowing GTK applications to play sounds in response to events using libcanberra's capabilities. It ensures that sounds are played consistently across GTK-based applications in a desktop environment
+
+```bash
+sudo apt-get install --reinstall libcanberra-gtk-module
+```
+
 ### 5. Depth_AI Examples 
 Luxonis DepthAI offers a range of examples that demonstrate the capabilities of their hardware platform and software libraries. These examples cover various use cases and functionalities, allowing developers to quickly get started with DepthAI and explore its features. Here are some common examples provided by DepthAI Luxonis:
 

@@ -285,11 +285,37 @@ python3 spatial_location_calculator.py
 
 ![spatial_location_calculator](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/5d0119ba-318f-40f3-bee2-ac955216d24a)
 
+#### 5. edge_detector.py
+ The edge_detector.py script from the DepthAI library is designed to provide users with tools and functionalities for detecting edges, extracting contours, and analyzing image or depth data for object detection, segmentation, and shape analysis applications.
+```bash
+cd ~/depthai-python/examples/EdgeDetector
+python3 edge_detector.py 
+```
+You can switch between sobel filter kernels using keys '1' and '2':
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/65698518-e515-44ab-b634-a32875ac15d8)
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/241fb80c-e4ec-41f1-90c6-6391f61750a5)
+
+#### 6. tiny_yolo.py
+The tiny_yolo.py script (Yolo 3 or 4) in the DepthAI library is designed to provide users with tools and functionalities for performing object detection using the Tiny YOLO algorithm, enabling applications such as object recognition, tracking, and classification in real-time on embedded devices.
+```bash
+cd ~/depthai-python/examples/Yolo
+python3 tiny_yolo.py
+```
+![Yolo](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/2dd68b92-bc93-44df-9631-01ca6e42ecab)
+
+The are various functions in the library such as IMU, Tracker, UVC, ... .
+
 
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python
+
+
+
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)
 ![Images/ROS Overview](Images/depthai_pythonlib_2.png)
+ 
 
 
 

@@ -257,7 +257,7 @@ You can see the 'left' and 'right' camera images (see the offset)
 #### 3. depth_colormap.py 
 The depth_colormap.py script from the DepthAI library is designed to provide users with tools and functionalities for visualizing, analyzing, and processing depth data captured by depth-sensing cameras, with a focus on generating colored depth maps for various applications in computer vision, robotics, and depth sensing:
 
- ```bash
+```bash
 cd ~/depthai-python/examples/StereoDepth
 python3 depth_colormap.py 
 ```
@@ -265,6 +265,16 @@ You can see the colormap that demonstrate the distnace of the objects:
 
 ![depth_colormap](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/dbfc2c42-ec43-402b-9bfd-1b67ab490264)
 
+You can also try 'depth_preview.py' 
+```bash
+python3 depth_preview.py 
+```
+#### 4. spatial_calculator_multi_roi.py 
+The spatial_calculator_multi_roi.py script likely serves as a tool within the DepthAI library for performing spatial calculations on depth data captured by depth-sensing cameras, such as those provided by the OAK-D camera module. The script  support multiple Regions of Interest (ROIs) within the depth data, allowing users to define multiple areas in the scene for spatial calculations. Each ROI could have its own set of parameters or configurations.script from the DepthAI library is designed to provide users with tools and functionalities for performing spatial calculations, analyzing depth data, and reconstructing 3D geometry from depth-sensing cameras, with support for multiple Regions of Interest (ROIs) and real-time visualization capabilities 
+```bash
+cd ~/depthai-python/examples/SpatialDetection
+python3 spatial_calculator_multi_roi.py 
+```
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python
 ![Images/ROS Overview](Images/depthai_pythonlib_1.png)

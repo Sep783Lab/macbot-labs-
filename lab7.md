@@ -126,11 +126,8 @@ sudo -H apt install -y python3-pip
 ```
 The -H option sets the HOME environment variable to the home directory and -y option automatically answers "yes" to any prompts or questions.
 
-After that, install and set up virtual environment:
-```bash
-sudo -H pip3 install virtualenv virtualenvwrapper
-```
-#### How Virtual Environment Works
+### 3. Virtual environments for `pip` and `python3`
+Virtual environments provide a sandboxed environment where you can install project-specific dependencies without affecting other Python projects or the system-wide Python installation. This isolation prevents conflicts between different versions of packages and ensures that each project has its own set of dependencies. How Virtual Environment Works
 
 1.  **Isolation**: It isolates the Python interpreter, dependencies, libraries, and environment variables used within a specific project from the global interpreter.
     
@@ -138,11 +135,20 @@ sudo -H pip3 install virtualenv virtualenvwrapper
     
 3.  **Switching Projects**: Virtual environments allow you to switch between different projects by activating or deactivating the corresponding environments, each with its own set of dependencies.
 
-Add following lines to the bash script:
+install and set up virtual environment (install two Python packages, virtualenv and virtualenvwrapper):
+
+```bash
+sudo -H pip3 install virtualenv virtualenvwrapper
+```
+The .bashrc file is a script file that contains commands and configurations for the Bash shell, which is the default shell for most Unix-like operating systems, including Linux. When you open a terminal session or start a new shell session, Bash reads and executes commands from the .bashrc file to set up the environment according to your preferences. In summary, the .bashrc file is a script file used to customize the behavior and environment of the Bash shell for individual users on Unix-like operating systems. adding virtual environment activation to the .bashrc file improves convenience, consistency, productivity, and adherence to best practices in Python development. It's a simple yet effective way to enhance your development workflow and ensure that you're always working within the appropriate environment for your projects.
+
+open your `bashrc` file located in your home directory with vi (you can open/edit the bashrc in various way) 
 
 ```bash
 sudo vi ~/.bashrc
-
+```
+Add following lines to the bash script:
+```bash
 # Virtual Env Wrapper Configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3

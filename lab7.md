@@ -315,28 +315,15 @@ python3 tiny_yolo.py
 The are various functions in the library such as IMU, Tracker, UVC, ... .
 
 
-run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
-cd depthai-python
+## Getting started with ROS and Docker
+The OAK-D Cameras by Luxonis come equipped with official Luxonis Depth-AI ROS packages. These packages offer support exclusively for ROS 2 Distributions and ROS Noetic Distro from ROS 1. In our previous labs, we've been utilizing ROS Melodic, which is compatible with the onboard Jetson Nano Linux system running Ubuntu 18.04. Unfortunately, ROS Noetic isn't compatible with Ubuntu 18.04, making it unusable for our current setup. However, we can address this compatibility issue by leveraging Docker Images. Docker provides a solution by allowing us to encapsulate ROS Noetic environments within containers, enabling us to run ROS Noetic on systems with Ubuntu 18.04 seamlessly.
 
-
-
-![Images/ROS Overview](Images/depthai_pythonlib_1.png)
-![Images/ROS Overview](Images/depthai_pythonlib_2.png)
- 
-
-
-
-## Docker  + ROS
-
-Each tagged version has it's own prebuilt docker image. To download and run it:
+Docker (https://wiki.ros.org/docker/Tutorials/Docker) simplifies the process of building, shipping, and running applications by providing a consistent and portable environment across different systems and platforms. It has become a popular choice for DevOps teams and developers for building and deploying containerized applications in cloud, on-premises, and hybrid environments. Each tagged version has it's own prebuilt docker image. To download and run it:
 
 ```bash
 xhost +local:docker
 ```
-
-to enable GUI tools such as rviz or rqt.
-
-Then
+to enable GUI tools such as rviz or rqt. Then
 ```bash
 docker run -it -v /dev/:/dev/  --privileged -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix luxonis/depthai-ros:noetic-latest bash
 ```

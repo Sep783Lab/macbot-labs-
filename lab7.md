@@ -261,6 +261,9 @@ The depth_colormap.py script from the DepthAI library is designed to provide use
 cd ~/depthai-python/examples/StereoDepth
 python3 depth_colormap.py 
 ```
+You can see the colormap that demonstrate the distnace of the objects:
+
+![depth_colormap](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/dbfc2c42-ec43-402b-9bfd-1b67ab490264)
 
 run `python3 install_requirements.py` and then run `python3 rgb_preview.py` to test out if your camera works.
 cd depthai-python

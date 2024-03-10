@@ -433,17 +433,13 @@ sudo docker images
 
 ## Lab Questions:
 
-Derive the formula Z = (f * B) / d. Explain each variable in the equation.
+- 1. Derive the formula Z = (f * B) / d. Explain each variable in the equation.
 
-What are the limitations of the OAK-D-LITE camera in terms of minimum and maximum depth perception (MinZ and MaxZ)?
+- 2. What are the limitations of the OAK-D-LITE camera in terms of minimum and maximum depth perception?
 
-Explain how Docker aids in running software independently of the host system. How does it solve the compatibility issue with ROS versions?
+- 3. Explain how Docker aids in running software independently of the host system. How does it solve the compatibility issue with ROS versions?
 
-
-What does roslaunch do in the ROS ecosystem? Describe its primary function and provide an example command.
-
-
-What is a ROS launch file and why is it important?
+- 4. What is a ROS launch file and why is it important?
 
 Provide an example of a launch file from the OAK-D-LITE package used in this lab. Break down its components and explain each part.
 

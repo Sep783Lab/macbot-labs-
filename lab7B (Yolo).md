@@ -1,5 +1,5 @@
 
-# 💾 Lab 4: 3D Object Detection and Depth Estimation with YOLO and Stereo Camera in ROS
+# 💾 Lab 7B: 3D Object Detection and Depth Estimation with YOLO and Stereo Camera in ROS
 
 ## GitHub Repository
 

@@ -377,6 +377,7 @@ The ROS_MASTER_URI environment variable specifies the address where the ROS Mast
 When you set `export ROS_MASTER_URI=http://macbot09:11311/` both inside the Docker container and on the host machine, you are telling ROS nodes in both environments to register with and look for other nodes at the Master running on http://macbot09:11311/. This allows nodes inside the container to communicate with nodes outside of the container, provided they are reachable over the network.In a new terminal on your host machine, set the ROS_MASTER_URI environment variable to your ROS Master's address. Replace localhost with your host's actual hostname or IP if necessary:
 
 ```bash
+#localhost is macbotxx and the port number:11311
 export ROS_MASTER_URI=http://localhost:11311/
 ```
 ### 2. Start ROS Master on Host:
@@ -397,6 +398,7 @@ xhost +local:docker
 ### 4. Set ROS_MASTER_URI Inside Docker Container:
 Inside the Docker container, set the `ROS_MASTER_URI` to the same value as on the host. This configures the ROS nodes in the container to communicate with the ROS Master on the host:(replace localhost with your macbot name)
 ```bash
+#localhost is macbotxx and the port number:11311
 export ROS_MASTER_URI=http://localhost:11311/
 ```
 ### 5. Inside the docker container launch stereo_node:
@@ -412,6 +414,9 @@ roslaunch depthai_examples  stereo_node.launch
 ```
 ```bash
 rostopic list
+```
+```bash
+rostopic echo /any topic you want
 ```
 
 ## Listing Docker containers
@@ -430,7 +435,6 @@ sudo docker images
 
 - 4. What is a ROS launch file and why is it important?
 
-Provide an example of a launch file from the OAK-D-LITE package used in this lab. Break down its components and explain each part.
 
 
 

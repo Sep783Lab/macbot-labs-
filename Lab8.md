@@ -37,13 +37,96 @@ Split your terminator layout into the following layout (7 Tabs). Right-click and
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/72f513c2-7793-4c94-abbc-bbe5d2265b7d)
 
-## Launch Environment and Gazebo
-Gazebo is a ROS graphical simulation tool. It includes packages to aid in the simulation of forces and physics including gravity, torque, etc. Gazebo brings a fresh approach to simulation with a complete toolbox of development libraries and cloud services to make simulation easy. Iterate fast on your new physical designs in realistic environments with high fidelity sensors streams. Test control strategies in safety, and take advantage of simulation in continuous integration tests. SDF is used to specify the contents of simulation, see more information here : http://sdformat.org/tutorials.
-SDFormat (Simulation Description Format), sometimes abbreviated as SDF, is an XML format that describes objects and environments for robot simulators, visualization, and control. Originally developed as part of the Gazebo robot simulator, SDFormat was designed with scientific robot applications in mind. Over the years, SDFormat has become a stable, robust, and extensible format capable of describing all aspects of robots, static and dynamic objects, lighting, terrain, and even physics. You can use sdformat.org to create robot and environments. The environment and Macbot model have already been created for you.
+## Gazebo and Unified Robot Description Format
+Gazebo is a ROS graphical simulation tool. It includes packages to aid in the simulation of forces and physics including gravity, torque, etc. Gazebo brings a fresh approach to simulation with a complete toolbox of development libraries and cloud services to make simulation easy. Iterate fast on your new physical designs in realistic environments with high fidelity sensors streams. Test control strategies in safety, and take advantage of simulation in continuous integration tests. In Gazebo, the URDF (Unified Robot Description Format) file plays a central role in defining the physical characteristics and kinematic structure of a robot model used for simulation.
+
+URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It is an XML-based file format used in ROS (Robot Operating System) to describe the physical and kinematic properties of robots, including their geometry, joints, sensors, and other attributes. URDF files play a crucial role in robot modeling, simulation, and visualization within the ROS ecosystem. Here are the key components typically found in a URDF file:
+
+- Robot Model: The URDF file contains the geometric description of the robot, including links (visual and collision properties) and their respective transformations.
+
+- Joints: Joints define the kinematic structure of the robot, specifying how links are connected and how they can move relative to each other. URDF supports various joint types such as revolute, continuous, prismatic, fixed, etc.
+
+- Inertial Properties: URDF files include inertial properties for each link, such as mass, inertia matrix, and center of mass. These properties are essential for simulating the dynamics of the robot accurately.
+
+- Visual and Collision Geometry: Each link in the URDF file can have both visual and collision geometry. Visual geometry defines the appearance of the link in visualizations, while collision geometry is used for collision detection in simulations.
+
+- Sensors: URDF files can also describe sensors attached to the robot, such as cameras, lidars, IMUs, etc. Sensor parameters such as field of view, resolution, and noise characteristics can be specified.
+
+- Transmission and Actuators (optional): For robots with actuators, URDF files may include transmission tags to define how joint movements are translated into actuator commands. This is useful for simulating actuated joints accurately.
+
+- Robot Description: The complete URDF file provides a comprehensive description of the robot's physical properties, kinematics, dynamics, and sensor configurations. This information is crucial for various robotics applications, including simulation, motion planning, and control.
+    ```bash
+      <?xml version="1.0"?>
+    <robot name="two_link_robot">
+    
+      <!-- Define the first link -->
+      <link name="link1">
+        <visual>
+          <geometry>
+            <box size="0.1 1.0 0.1"/>
+          </geometry>
+        </visual>
+        <collision>
+          <geometry>
+            <box size="0.1 1.0 0.1"/>
+          </geometry>
+        </collision>
+        <inertial>
+          <mass value="1.0"/>
+          <origin xyz="0 0 0.5"/>
+          <inertia ixx="0.083" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="0.083"/>
+        </inertial>
+      </link>
+    
+      <!-- Define the second link -->
+      <link name="link2">
+        <visual>
+          <geometry>
+            <box size="0.1 1.0 0.1"/>
+          </geometry>
+        </visual>
+        <collision>
+          <geometry>
+            <box size="0.1 1.0 0.1"/>
+          </geometry>
+        </collision>
+        <inertial>
+          <mass value="1.0"/>
+          <origin xyz="0 0 0.5"/>
+          <inertia ixx="0.083" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="0.083"/>
+        </inertial>
+      </link>
+    
+      <!-- Define the first joint -->
+      <joint name="joint1" type="revolute">
+        <parent link="link1"/>
+        <child link="link2"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="1.57"/>
+      </joint>
+    
+    </robot>
+    ```
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/1083939d-1fbf-4475-a3bd-2cc1a68f113b)
+
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/485ad380-53ca-4d7f-9569-af36c325893b)
 
-1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
+  1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
+```bash
+    roscore
+```
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/7caee696-e7ca-433d-aed8-8af58071a1bb)
+
+2. In the bottom left terminal emulator, launch the following file. Ensure that it launches successfully before proceeding.
+```bash
+    roslaunch macbot_gazebo default.launch world:=maze rviz_config:=mapping
+```
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/91ea6e8d-bc21-48e3-ac96-35a6af5a6e13)
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/37481a80-4170-4c70-9a81-3bfe25de3f43)
+
 
 
 

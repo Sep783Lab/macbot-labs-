@@ -55,7 +55,11 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
 - Transmission and Actuators (optional): For robots with actuators, URDF files may include transmission tags to define how joint movements are translated into actuator commands. This is useful for simulating actuated joints accurately.
 
 - Robot Description: The complete URDF file provides a comprehensive description of the robot's physical properties, kinematics, dynamics, and sensor configurations. This information is crucial for various robotics applications, including simulation, motion planning, and control.
-    ```bash
+
+  Here is of an example of two links robot:
+  ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/1083939d-1fbf-4475-a3bd-2cc1a68f113b)
+
+    ```xml
       <?xml version="1.0"?>
     <robot name="two_link_robot">
     
@@ -108,7 +112,6 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
     
     </robot>
     ```
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/1083939d-1fbf-4475-a3bd-2cc1a68f113b)
 
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/485ad380-53ca-4d7f-9569-af36c325893b)
@@ -120,6 +123,40 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/7caee696-e7ca-433d-aed8-8af58071a1bb)
 
 2. In the bottom left terminal emulator, launch the following file. Ensure that it launches successfully before proceeding.
+```bash
+    roslaunch macbot_gazebo default.launch 
+```
+This launch file utilizes the URDF format to generate the robot model in Gazebo. You can examine the model's structure in the left column for further details.
+
+
+This launch file also launches the RViz application with the robot model, including a lidar sensor.
+
+
+3. Close RViz and Gazebo (File\Quit). Terminate the launch node using Terminator ( CTL+x and CTL+c). Then, launch Gazebo with a 'maze' environment by running:
+  
+```bash
+    roslaunch macbot_gazebo default.launch world:=maze 
+```
+This launch file include 'maze' world to the model in Gazebo.
+
+
+Look in RViz that the laser scanner (LiDAR) is scanning the environment in front of the robot.
+
+4. Close RViz and Gazebo (File\Quit). Terminate the launch node using Terminator ( CTL+x and CTL+c). Then, launch Gazebo with a 'maze' environment and RVIZ for mapping:
+
+```bash
+    roslaunch macbot_gazebo default.launch world:=maze rviz_config:=mapping
+```
+This will load the RVIZ in wireframe to use less memory for rendering. Notice that your RVIZ visualization data are in an error state. This is because RVIZ isn’t yet being provided with simulated point-cloud data.
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/3d5f8631-fce8-4b3b-8374-6f36899fff75)
+
+
+
+
+
+
+
 ```bash
     roslaunch macbot_gazebo default.launch world:=maze rviz_config:=mapping
 ```

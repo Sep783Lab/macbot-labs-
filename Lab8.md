@@ -201,15 +201,67 @@ In one of the treminal launch the gmap ( the luanch file located: `~/macbot/macb
 ```bash
     roslaunch macbot_navigation gmap.launch
 ```
-After a few moments, in RVIZ you should be able to see a map being generated..
 
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/91ea6e8d-bc21-48e3-ac96-35a6af5a6e13)
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/e35b0285-060d-4534-b2bf-8f23b95bb122)
 
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/37481a80-4170-4c70-9a81-3bfe25de3f43)
+then
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/6df21019-9df3-412e-9dc8-e247642a2712)
+
+After a few moments, in RVIZ you should be able to see a map being generated with data points from the lidar.
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/891f1f08-ce40-4c11-b7ed-cb9651f1a0ad)
+
+## Teleop package in ROS 
+
+The Teleop package in ROS (Robot Operating System) provides a set of tools and nodes for teleoperation, allowing users to control robots remotely using different input devices such as keyboards, joysticks, or mobile devices. Teleoperation is crucial during robot development, testing, and educational activities. Here's an explanation of the Teleop package components and functionalities:
+
+- Teleoperation Nodes: The Teleop package includes various nodes that handle teleoperation commands from users. These nodes translate input commands into control messages that the robot can understand. For example, the teleop_twist_keyboard node enables keyboard teleoperation for robots by converting keyboard inputs into Twist messages for velocity control.
+
+- Input Device Support: Teleop nodes support a wide range of input devices, including keyboards, joysticks, game controllers, touchpads, and mobile applications. Users can choose the appropriate teleoperation node based on the input device they want to use to control the robot.
+
+- Control Commands: Teleop nodes generate control commands that dictate the robot's motion. These commands typically include velocity commands (linear and angular) for mobile robots or joint commands for robotic arms. The teleoperation system ensures that the robot responds accurately to user input.
+
+- ROS Topics and Messages: Teleop nodes subscribe to ROS topics that receive input data from the user's chosen input device. For instance, a teleop node might subscribe to Twist messages published by a keyboard input node or joystick input node. After processing the input, the teleop node publishes control commands on relevant topics for the robot's control system to execute.
+
+- Parameter Configuration: Users can configure teleop nodes by setting parameters such as maximum velocities, acceleration limits, control modes (e.g., velocity control or position control), and input device configurations. These parameters allow users to customize the teleoperation behavior to suit the robot's capabilities and the user's preferences.
+
+- Integration with Robot Systems: The Teleop package seamlessly integrates with other ROS packages and robot systems. Teleop nodes can work alongside navigation stacks, simulation environments (e.g., Gazebo), perception systems, and robotic hardware, enabling interactive and intuitive control of robots.
+
+- Educational and Testing Tool: Teleoperation serves as a valuable educational tool for learning ROS concepts, robot control principles, and human-robot interaction. It also functions as a testing and validation tool during robot development, enabling developers to verify robot behavior, test algorithms, and assess system performance in different scenarios.
+
+```bash
+    roslaunch macbot_gazebo teleop.launch
+```
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/7cbd1e25-343d-4040-a2c0-e78d91d7f822)
+
+A terminal teleop interface should be made available. To move around, use the keys listed. Ensure that they affect your position in Gazebo.
+
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/2d440e9b-7ed4-4b80-9192-b139f4d45819)
 
 
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/3db2e2f7-34fb-402c-9d07-b3804c647102)
 
+## rqt_graph package in ROS
+Now, lets learn more about how the nodes communicate under the hood. In any open terminal window, launch rqt_graph.
+    
+```bash
+rqt_graph
+``` 
+![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/e3019605-2672-489d-a483-f2cfe95be201)
 
+A new graphical application will begin streaming to your PC. Ensure that the Nodes/Topics (all) option is selected.
 
+ ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/c041a3bf-3899-4d0c-89ce-11d10737be98)
+
+Here, we can see the flow of data between each node in our ROS network. Notice how the teleop control commands are being input into the mobile_base_controller. 
+The role of a ROS controller is to receive motion commands and translate them to a series joint actuations. 
+These joint actuations are then input into the Gazebo simulation application, which aggregates these actuations into a model of joint motions. 
+Gazebo is also used to simulate a lidar collecting data in the virtual environment provided. This simulated point cloud data is then input into the gmapping algorithm, who generates the map and affects our RVIZ visualization as well as a back-end map model.
+
+Close the ROS application by closing all active terminal windows. This can be done using the X button on the top right window menu.
+ 
+
+ 
 
 

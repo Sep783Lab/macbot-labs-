@@ -114,8 +114,7 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
     ```
 
 
-
-  1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
+1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
 ```bash
     roscore
 ```

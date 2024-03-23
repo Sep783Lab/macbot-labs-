@@ -201,7 +201,7 @@ In one of the treminal launch the gmap ( the luanch file located: `~/macbot/macb
 ```bash
     roslaunch macbot_navigation gmap.launch
 ```
-After a few moments, in RVIZ you should be able to see a map being generated.
+After a few moments, in RVIZ you should be able to see a map being generated..
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/91ea6e8d-bc21-48e3-ac96-35a6af5a6e13)
 

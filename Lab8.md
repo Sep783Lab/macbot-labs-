@@ -196,12 +196,13 @@ The `gmapping` package in ROS (Robot Operating System) provides functionality fo
 
 Overall, the gmapping package in ROS is a critical component for enabling robots to build maps of their surroundings and localize themselves within those maps, facilitating autonomous navigation and exploration tasks.
 
-
-
-
+In one of the treminal launch the gmap ( the luanch file located: `~/macbot/macbot_ws/src/macbot_ros/macbot_navigation/launch/gmap.launch`)
+  
 ```bash
-    roslaunch macbot_gazebo default.launch world:=maze rviz_config:=mapping
+    roslaunch macbot_navigation gmap.launch
 ```
+After a few moments, in RVIZ you should be able to see a map being generated.
+
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/91ea6e8d-bc21-48e3-ac96-35a6af5a6e13)
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/37481a80-4170-4c70-9a81-3bfe25de3f43)

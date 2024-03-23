@@ -124,7 +124,7 @@ gedit  ~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf/robot_textured.
 ```
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/f06a1871-e653-4875-b0e0-6b5d657feb3d)
 
-2. In the bottom left terminal emulator, launch the following file (' ~/macbot/macbot_ws/src/macbot_ros/macbot_gazebo/launch/default.launch). Ensure that it launches successfully before proceeding.
+2. In the bottom left terminal emulator, launch the following file (`~/macbot/macbot_ws/src/macbot_ros/macbot_gazebo/launch/default.launch`). Ensure that it launches successfully before proceeding.
 ```bash
     roslaunch macbot_gazebo default.launch 
 ```

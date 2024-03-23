@@ -114,7 +114,6 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
     ```
 
 
-![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/485ad380-53ca-4d7f-9569-af36c325893b)
 
   1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
 ```bash

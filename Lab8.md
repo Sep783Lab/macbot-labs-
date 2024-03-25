@@ -260,7 +260,13 @@ These joint actuations are then input into the Gazebo simulation application, wh
 Gazebo is also used to simulate a lidar collecting data in the virtual environment provided. This simulated point cloud data is then input into the gmapping algorithm, who generates the map and affects our RVIZ visualization as well as a back-end map model.
 
 Close the ROS application by closing all active terminal windows. This can be done using the X button on the top right window menu.
- 
+
+
+ ## Lab assignment
+- Create a URDF file for a simple box-shaped robot with four wheels (use any arbitary dimensions for the box and wheels)
+- Open your file in Gazebo
+- Submit you xml file and the screenshot from your Gazebo
+  
 
  
 

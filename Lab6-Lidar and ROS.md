@@ -2,5 +2,5 @@
 Visualizing LiDAR Data
 SEP 783 – Sensors & Actuators
 Dr. Moein Mehrtash
-![image](https://github.com/user-attachments/assets/339d9b7e-eec7-4d32-9d69-cdd714990a3d)
+![image](https://github.com/user-attachments/assets/861102c9-9868-42a7-9881-585a8f81d856)
 

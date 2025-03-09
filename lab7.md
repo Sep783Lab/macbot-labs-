@@ -391,7 +391,7 @@ When you set `export ROS_MASTER_URI=http://macbot09:11311/` both inside the Dock
 ```bash
 roscore
 ```
-### 3. Run Docker Container with Network Host in a new terminal: (--network host in Docker)
+### 2. Run Docker Container with Network Host in a new terminal: (--network host in Docker)
 
 Open a new terminal. Start your Docker container with the --network host option to allow it to use the host's network stack.
 ```bash
@@ -400,18 +400,18 @@ xhost +local:docker
 ```bash
  sudo docker run -it --network host -v /dev/:/dev/  --privileged -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix luxonis/depthai-ros:noetic-latest bash
 ```
-### 4. Set ROS_MASTER_URI Inside Docker Container:
+### 3. Set ROS_MASTER_URI Inside Docker Container:
 Inside the Docker container, set the `ROS_MASTER_URI` to the same value as on the host. This configures the ROS nodes in the container to communicate with the ROS Master on the host:(replace localhost with your macbot name)
 ```bash
 #localhost is macbotxx and the port number:11311
 export ROS_MASTER_URI=http://localhost:11311/
 ```
-### 5. Inside the docker container launch stereo_node:
+### 4. Inside the docker container launch stereo_node:
 ```bash
 roslaunch depthai_examples  stereo_node.launch
 ```
 
-### 6. Communicate Between Nodes:
+### 5. Communicate Between Nodes:
 - With the ROS Master running on the host and both the host and Docker container nodes configured to use the same ROS Master URI, nodes can now communicate across the host and container boundary.
 - Open a new terminal on the host and run:
 ```bash
@@ -419,12 +419,15 @@ roslaunch depthai_examples  stereo_node.launch
 ```
 ```bash
 rostopic list
+
 ```
 ```bash
 #rostopic echo /any topic you want
 rostopic echo /stereo_publisher/stereo/depth
-
 ```
+Here are published topics from depth camera:
+![image](https://github.com/user-attachments/assets/d0e14a5a-7b11-4f24-af4d-30840feb9ee7)
+
 You can aslo visulaize the published depth topic in Rviz on your ROS master. Open Rviz and add `DepthCloud` and update depth topic.
 
 ## Listing Docker containers

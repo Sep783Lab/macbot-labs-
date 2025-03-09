@@ -318,6 +318,13 @@ python3 tiny_yolo.py
 
 The are various functions in the library such as IMU, Tracker, UVC, ... .
 
+#### 7. SpatialDetection
+SpecialDetection and Tiny YOLO on the Oak-D camera combine depth sensing and real-time object detection. The Oak-D's stereo depth capability, along with Tiny YOLO’s lightweight architecture, enables efficient, accurate object detection in 3D environments. This integration is ideal for applications like robotics and AR/VR, where depth information enhances detection precision, making it possible to identify and track objects in complex scenes.
+
+```bash
+cd ~/depthai-python/examples/SpatialDetection
+python3  spatial_tiny_yolo.py
+```
 
 ## Getting started with ROS and Docker
 The OAK-D Cameras by Luxonis come equipped with official Luxonis Depth-AI ROS packages. These packages offer support exclusively for ROS 2 Distributions and ROS Noetic Distro from ROS 1. In our previous labs, we've been utilizing ROS Melodic, which is compatible with the onboard Jetson Nano Linux system running Ubuntu 18.04. Unfortunately, ROS Noetic isn't compatible with Ubuntu 18.04, making it unusable for our current setup. However, we can address this compatibility issue by leveraging Docker Images. Docker provides a solution by allowing us to encapsulate ROS Noetic environments within containers, enabling us to run ROS Noetic on systems with Ubuntu 18.04 seamlessly.

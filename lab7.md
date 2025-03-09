@@ -420,8 +420,12 @@ roslaunch depthai_examples  stereo_node.launch
 rostopic list
 ```
 ```bash
-rostopic echo /any topic you want
+#rostopic echo /any topic you want
+rostopic echo /stereo_publisher/stereo/depth
+
 ```
+
+
 
 ## Listing Docker containers
 ```

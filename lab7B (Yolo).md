@@ -34,7 +34,7 @@ https://cocodataset.org/#explore
 
 ## Lab Setup:
 
-Follow the previous docker steps from Lab 3
+Follow the previous docker steps from Lab 7
 
 Once you are inside the depthai-noetic docker image.
 

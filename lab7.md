@@ -97,7 +97,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 keeping your system up-to-date : `sudo apt update` fetches the latest package information from repositories, and `sudo apt upgrade` installs the latest available versions of the installed packages, ensuring that your system has the most up-to-date software. Combining these commands with `&&` ensures that the upgrade command is only executed if update completes successfully, preventing upgrades based on outdated package lists.
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 sudo reboot now
 ```
 ### 2. Resize SWAP

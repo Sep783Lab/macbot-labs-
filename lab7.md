@@ -385,13 +385,7 @@ The ROS_MASTER_URI environment variable specifies the address where the ROS Mast
 
 ### 1. Setting ROS_MASTER_URI on Host
 
-When you set `export ROS_MASTER_URI=http://macbot09:11311/` both inside the Docker container and on the host machine, you are telling ROS nodes in both environments to register with and look for other nodes at the Master running on http://macbot09:11311/. This allows nodes inside the container to communicate with nodes outside of the container, provided they are reachable over the network.In a new terminal on your host machine, set the ROS_MASTER_URI environment variable to your ROS Master's address. Replace localhost with your host's actual hostname or IP if necessary:
-
-```bash
-#localhost is macbotxx and the port number:11311
-export ROS_MASTER_URI=http://localhost:11311/
-```
-### 2. Start ROS Master on Host:
+When you set `export ROS_MASTER_URI=http://macbot09:11311/` both inside the Docker container and on the host machine, you are telling ROS nodes in both environments to register with and look for other nodes at the Master running on http://macbot09:11311/. This allows nodes inside the container to communicate with nodes outside of the container, provided they are reachable over the network.In a new terminal on your host machine, set the ROS_MASTER_URI environment variable to your ROS Master's address. Replace localhost with your host's actual hostname or IP if necessary. Start ROS Master on Host:
 - Open a terminal on your host machine.
 - Run the command below to start the ROS Master:
 ```bash
@@ -399,7 +393,7 @@ roscore
 ```
 ### 3. Run Docker Container with Network Host in a new terminal: (--network host in Docker)
 
-Start your Docker container with the --network host option to allow it to use the host's network stack.
+Open a new terminal. Start your Docker container with the --network host option to allow it to use the host's network stack.
 ```bash
 xhost +local:docker
 ```

@@ -172,7 +172,7 @@ it should return the following:
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/00c1fa89-4e82-4c2c-89d7-ff93ca2c8080)
 
-Closing the terminal will exit the virtual environment, effectively disconnecting your current session from it. However, if you wish to use the same virtual environment again in the future, you can easily reactivate it by using the `workon` command followed by the name of the environment ('workon depthAI_ve'). This will allow you to resume working within the virtual environment without having to set it up again from scratch.
+Closing the terminal will exit the virtual environment, effectively disconnecting your current session from it. However, if you wish to use the same virtual environment again in the future, you can easily reactivate it by using the `workon` command followed by the name of the environment `workon depthAI_ve`). This will allow you to resume working within the virtual environment without having to set it up again from scratch.
 
 ### 4. Installing Depth_AI
 The DepthAI library from Luxonis is a software library designed to work with Luxonis DepthAI hardware modules. DepthAI is an embedded platform that integrates multiple capabilities for depth perception, object detection, and spatial AI tasks into a compact and low-power device. The platform is specifically designed for applications that require real-time processing of depth and visual data, such as robotics, augmented reality, autonomous vehicles, and more.

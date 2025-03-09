@@ -424,8 +424,7 @@ rostopic list
 rostopic echo /stereo_publisher/stereo/depth
 
 ```
-
-
+You can aslo visulaize the published depth topic in Rviz on your ROS master. Open Rviz and add `DepthCloud` and update depth topic.
 
 ## Listing Docker containers
 ```

@@ -43,7 +43,7 @@ Run the following commands:
 Navigate to the depthai_examples package
 
 ```bash
-roscd depthai_examples
+roscd depthai_examples/launch
 ```
 
 Look at the yolov4_publisher launch file and list the nodes inside

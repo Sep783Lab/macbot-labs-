@@ -154,7 +154,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 ```
-Save and reload the script by running the command `source ~/.bashrc`.
+Save and quit in vim (vi) by type `:wq`.
+
+and reload the script by running the command `source ~/.bashrc`.
 ```bash
 source ~/.bashrc
 ```

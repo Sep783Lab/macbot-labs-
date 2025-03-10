@@ -443,6 +443,7 @@ sudo docker images
 - 2. What are the limitations of the OAK-D-LITE camera in terms of minimum and maximum depth perception?
 
 - 3. Explain how Docker aids in running software independently of the host system. How does it solve the compatibility issue with ROS versions?
+- 4. Include a screenshot of the depth camera nodes in RVIZ in your report.
 
 ## Lab Assignment: (submit)
 Objective: The aim of this assignment is to compute the Fundamental Matrix (F) using MATLAB functions and visualize the epipolar lines. For the following images:
@@ -455,12 +456,6 @@ You do not need to develop functions, just the functions are available in Matlab
 - Compute the epipolar lines for a given set of points in the left image using MATLAB's epipolarLine function
 - Overlay the epipolar lines on both images for visualization using line or plot functions.
 - Submit a well-commented MATLAB script (.m file)
-
-
-
-
-
-
 
 ## Lab Requiremnts:
 

@@ -456,7 +456,3 @@ You do not need to develop functions, just the functions are available in Matlab
 - Compute the epipolar lines for a given set of points in the left image using MATLAB's epipolarLine function
 - Overlay the epipolar lines on both images for visualization using line or plot functions.
 - Submit a well-commented MATLAB script (.m file)
-
-## Lab Requiremnts:
-
-Include a screenshot of the depth camera nodes in RVIZ in your report.

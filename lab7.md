@@ -451,8 +451,9 @@ Objective: The aim of this assignment is to compute the Fundamental Matrix (F) u
 ![left_image](https://github.com/user-attachments/assets/00a3a55b-5a58-4531-8d35-055814ac37c1)
 ![right_image](https://github.com/user-attachments/assets/0d0ae8e2-7f4f-445a-b0b0-bdcce46635a5)
 
-You do not need to develop functions, just the functions are available in Matlab.
-- Using the given corresponding points between the left and right images, estimate the fundamental matrix using MATLAB's built-in functions
+You do not need to develop functions, just the functions are available in Matlab (detectSURFFeatures,extractFeatures,matchFeatures,estimateFundamentalMatrix,epipolarLine, ...)
+- Using the given corresponding points between the left and right images (use avaiable feature detection functions in MAtlab) ,
+- Estimate the fundamental matrix using MATLAB's built-in functions
 - Compute the epipolar lines for a given set of points in the left image using MATLAB's epipolarLine function
 - Overlay the epipolar lines on both images for visualization using line or plot functions.
 - Submit a well-commented MATLAB script (.m file)

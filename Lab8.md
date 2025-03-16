@@ -115,7 +115,11 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
 The URDF file (robot_textured.xacro) of the Macbot is located here: `~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf`.
 
 ```bash
-gedit  ~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf/robot_textured.xacro
+xhost +SI:localuser:root
+```
+
+```bash
+sudo -H gedit  ~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf/robot_textured.xacro
 ```
 
 1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.

@@ -255,6 +255,21 @@ A terminal teleop interface should be made available. To move around, use the ke
 
 ![image](https://github.com/Sep783Lab/macbot-labs-/assets/150700633/3db2e2f7-34fb-402c-9d07-b3804c647102)
 
+
+## Save the Map Using map_server
+
+```bash
+rosrun map_server map_saver -f ~/my_map
+```
+
+This will save the map in two files:
+- my_map.pgm (image representation of the map)
+  ![image](https://github.com/user-attachments/assets/8f21ef64-e252-42d0-b779-caf89b6a8a83)
+
+- my_map.yaml (metadata file for ROS)
+  ![image](https://github.com/user-attachments/assets/ef864f9e-be52-4269-8caa-78b9f888ca3e)
+
+
 ## rqt_graph package in ROS
 Now, lets learn more about how the nodes communicate under the hood. In any open terminal window, launch rqt_graph.
     

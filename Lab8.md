@@ -294,18 +294,18 @@ Close the ROS application by closing all active terminal windows. This can be do
 -Submit created map using gmap
 
 - Create a URDF file for a simple box-shaped robot with four wheels:
+  
 -- Base Link (base_link):This is the main body of the robot, modeled as a box with dimensions 1 x 0.5 x 0.5 meters. The box is visualized with a blue material and has a collision geometry of the same size.
 Four Wheels (front_left_wheel, front_right_wheel, rear_left_wheel, rear_right_wheel):
 
-Each wheel is modeled as a cylinder with a radius of 0.1 meters and a length of 0.05 meters.
+-- Each wheel is modeled as a cylinder with a radius of 0.1 meters and a length of 0.05 meters.
 The wheels are placed at the four corners of the base, and the material is set to black.
 Joints:
-
-Each wheel is connected to the base_link via a revolute joint, which allows the wheel to rotate.
-The origin tag defines the position of the wheel relative to the base_link.
-The axis tag specifies the rotation axis for the wheel (the Z-axis).
-The limit tag defines the effort (torque) and velocity limits for the joints.
-Positioning of the Wheels:
+--Each wheel is connected to the base_link via a revolute joint, which allows the wheel to rotate.
+--The origin tag defines the position of the wheel relative to the base_link.
+--The axis tag specifies the rotation axis for the wheel (the Z-axis).
+-- The limit tag defines the effort (torque) and velocity limits for the joints.
+--Positioning of the Wheels:
 - Front Left Wheel: Positioned at (0.5, 0.25, 0.25) relative to the base_link.
 - Front Right Wheel: Positioned at (0.5, -0.25, 0.25) relative to the base_link.
 - Rear Left Wheel: Positioned at (-0.5, 0.25, 0.25) relative to the base_link.

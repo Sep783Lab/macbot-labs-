@@ -112,8 +112,17 @@ URDF stands for Unified Robot Description Format (http://wiki.ros.org/urdf). It 
     
     </robot>
     ```
-The URDF file (robot_textured.xacro) of the Macbot is located here: `~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf`.
+The URDF file (robot_textured.xacro) of the Macbot is located here: `~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf`. Run the following command to give your user proper access:
+```bash
+sudo chown -R $USER:$USER ~/.ros
+chmod -R 755 ~/.ros
+```
+Then, update rosdep:
 
+```bash
+sudo rosdep fix-permissions
+rosdep update
+```
 ```bash
 xhost +SI:localuser:root
 ```

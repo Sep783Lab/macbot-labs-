@@ -130,6 +130,13 @@ xhost +SI:localuser:root
 ```bash
 sudo -H gedit  ~/macbot/macbot_ws/src/macbot_ros/macbot_description/urdf/robot_textured.xacro
 ```
+Review the structure of the URDF file. Since we do not have a RealSense camera, please comment out the camera section and save the URDF file as shown below.
+
+<img width="860" height="115" alt="Screenshot from 2026-03-30 14-01-07" src="https://github.com/user-attachments/assets/84ef173e-7001-446d-a8b2-5fe5773ca3a0" />
+<img width="860" height="115" alt="Screenshot from 2026-03-30 14-01-07" src="https://github.com/user-attachments/assets/0c77375f-881f-40ab-94f4-1eb36f949d65" />
+
+
+Save the URDF file and close it.
 
 1. In the top left terminal emulator, launch ROSCore. Ensure it launches before proceeding.
 ```bash
